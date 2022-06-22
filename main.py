@@ -1,16 +1,16 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from datetime import *
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Создаем список где будут хронятся данные для обработки
+input_person = []
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def cabinet_selection():
+    cabin = int(input("Выберете кабинет который хотите забронировать: 1...5"))
+    if cabin in range(1, 6):
+        print(True)
+    else:
+        cabinet_selection()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+cabinet_selection()
