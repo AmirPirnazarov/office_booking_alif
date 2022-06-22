@@ -1,5 +1,17 @@
 from datetime import *
+import pymysql.cursors
 
+# Подключение к БД MySQL
+try:
+    connection = pymysql.connect(host='localhost',
+                                 user='root',
+                                 db='booking',
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
+    print("connect on BD successful!!")
+except pymysql.err.OperationalError:
+    print("not connection on BD!!")
+    exit(0)
 
 # Создаем список где будут хронятся данные для обработки
 input_person = []
