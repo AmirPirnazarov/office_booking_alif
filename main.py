@@ -45,6 +45,22 @@ def time_and_date_selection():
         except ValueError:
             print("Вы вводите что-то не то!")
 
+
+# Функция принимает на сколько часов бронируется кабинет
+def hours_selection():
+    while True:
+        hours = input("продолжительность брони(час-минуты)? н.р 01:20 или 00:40 \n")
+        try:
+            if int(hours[0:2]) <= 23 and int(hours[3:5]) <= 59 and hours[2:3] == ":":
+                input_person.append(hours)
+                break
+            else:
+                print("НЕВЕРНО!!! Выберете правельную дату! сначала месяц потом день недели \n")
+        except ValueError:
+            print("Вы вводите что-то не то!")
+
+
 cabinet_selection()
 time_and_date_selection()
+hours_selection()
 print(input_person)
